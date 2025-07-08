@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="52" viewBox="0 0 55 52">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-6.934" y1="10.216" x2="-6.934" y2="10.241" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0062e0"/>
+      <stop offset="1" stop-color="#19afff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_16627" data-name="Group 16627" transform="translate(-149 -643)">
+    <g id="Rectangle_345" data-name="Rectangle 345" transform="translate(149 643)" fill="#fff" stroke="#f1f1f1" stroke-width="1">
+      <rect width="55" height="52" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="54" height="51" rx="4.5" fill="none"/>
+    </g>
+    <g id="Facebook_f_logo__2021_2_" data-name="Facebook_f_logo_(2021) (2)" transform="translate(158.944 650.127)">
+      <path id="Path_30432" data-name="Path 30432" d="M14.878,35.458A17.854,17.854,0,0,1,17.818,0a17.854,17.854,0,0,1,2.94,35.458l-.98-.8h-3.92Z" fill="url(#linear-gradient)"/>
+      <path id="Path_30433" data-name="Path 30433" d="M26.054,23.658l.8-4.989H22.134V15.194c0-1.425.535-2.495,2.673-2.495h2.316V8.156A29.136,29.136,0,0,0,23.2,7.8c-4.1,0-6.949,2.495-6.949,6.949v3.92H11.8v4.989h4.454V36.219a16.3,16.3,0,0,0,5.88,0V23.658Z" transform="translate(-1.287 -0.851)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
