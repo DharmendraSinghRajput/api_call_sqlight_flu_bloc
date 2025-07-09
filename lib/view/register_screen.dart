@@ -1,3 +1,5 @@
+import 'package:api_call_sqlight_flu_bloc/view/home_screen.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,8 +18,10 @@ import '../common_view/CustomSvgCheckbox.dart';
 import '../common_view/CustomTextFormField.dart';
 import '../model/User.dart';
 import '../utils/AppLogger.dart';
+import '../utils/SharedPrefHelper.dart';
 import '../utils/showToast.dart';
 
+@RoutePage()
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -40,8 +44,19 @@ class _RegisterScreen extends State<RegisterScreen> {
       body: BlocListener<ProfileSqlightBloc, ProfileSqlightState>(
         listener: (context, state) {
           if (state is UserSuccessState) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(const SnackBar(content: Text("User added successfully")));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("User added successfully ${state.users.first.firstName}")));
+            SharedPrefHelper.saveUser(
+              username: state.users.first.firstName,
+              email: state.users.first.email,
+              password: state.users.first.password,
+
+            );
+
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const HomeScreen(),
+              ),
+            );
             //context.pop();
           } else if (state is UserErrorState) {
             ScaffoldMessenger.of(context)

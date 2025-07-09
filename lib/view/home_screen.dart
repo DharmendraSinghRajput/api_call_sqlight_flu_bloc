@@ -13,7 +13,8 @@ class HomeScreen extends StatelessWidget {
       create: (_) => ProductBlocsBloc(PostRepository())..add(FetchProducts()),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Products'),
+          title: const Text('Products',style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.blue,
         ),
         body: BlocBuilder<ProductBlocsBloc, ProductBlocsState>(
           builder: (context, state) {

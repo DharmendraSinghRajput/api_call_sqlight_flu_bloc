@@ -1,4 +1,5 @@
 import 'package:api_call_sqlight_flu_bloc/view/register_screen.dart';
+import 'package:api_call_sqlight_flu_bloc/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/sql_bloc/profile_sqlight_bloc.dart';
@@ -9,6 +10,8 @@ void main() {
   Bloc.observer = MyBlocObserver();
   runApp( MyApp());
 }
+//final _appRouter = AppRouter();
+
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
@@ -22,10 +25,9 @@ class MyApp extends StatelessWidget {
         ),
         // Add other BlocProviders here
       ],
-      child: MaterialApp.router(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
-          routerConfig: _appNavigation.router
-
+        home: SplashScreen(),
       ),
     );
   }

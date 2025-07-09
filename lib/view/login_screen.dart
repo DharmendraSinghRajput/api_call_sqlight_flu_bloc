@@ -1,3 +1,5 @@
+import 'package:api_call_sqlight_flu_bloc/view/register_screen.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +11,8 @@ import '../bloc/sql_bloc/profile_sqlight_event.dart';
 import '../bloc/sql_bloc/profile_sqlight_state.dart';
 import '../common_view/CommanButtonCricle.dart';
 import '../common_view/CustomSvgCheckbox.dart';
-
+import '../utils/SharedPrefHelper.dart';
+@RoutePage()
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -219,7 +222,16 @@ class _LoginScreen extends State<LoginScreen> {
                           ),
 
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () async{
+                              bool isLoggedIn = await SharedPrefHelper.logoutUser();
+
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => isLoggedIn ? const LoginScreen() : const LoginScreen(),
+                                ),
+                              );
+
+                            },
                             child: Text(
                               "Forgot Password?",
                               style: TextStyle(
@@ -309,13 +321,15 @@ class _LoginScreen extends State<LoginScreen> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    context.goNamed('Register');
-                                  },
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                                    );                                  },
                               ),
                             ],
                           ),
                         ),
                       ),
+
 
                       SizedBox(height: 100),
                     ],
@@ -329,3 +343,4 @@ class _LoginScreen extends State<LoginScreen> {
     );
   }
 }
+

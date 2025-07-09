@@ -1,4 +1,5 @@
 import 'package:api_call_sqlight_flu_bloc/view/home_screen.dart';
+import 'package:api_call_sqlight_flu_bloc/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -6,12 +7,13 @@ import '../view/login_screen.dart';
 import '../view/register_screen.dart';
 
 class MyAppNavigation {
+
   final GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        name: 'Login',
+        name: 'Splash',
         path: '/',
-        builder: (context, state) => const LoginScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         name: 'Register',
